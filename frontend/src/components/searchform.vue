@@ -104,8 +104,9 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+  background: linear-gradient(to bottom right, #f7fafc, #edf2f7);
   min-height: 100vh;
+  font-family: "Arial", sans-serif;
 }
 
 /* Form Section */
@@ -115,12 +116,13 @@ export default defineComponent({
   border-radius: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #2d3748;
 }
@@ -128,37 +130,42 @@ export default defineComponent({
 .subtitle {
   font-size: 1.2rem;
   color: #718096;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Form Styles */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-.form-group label {
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
   font-size: 1rem;
-  font-weight: 600;
-  color: #4a5568;
-  display: block;
+  font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #4a5568;
 }
 
-.form-group input {
+input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #cbd5e0;
   border-radius: 0.375rem;
   font-size: 1rem;
-  color: #2d3748;
 }
 
-.form-group input:focus {
+input:focus {
   border-color: #3182ce;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.5);
 }
 
 .btn-submit {
@@ -179,41 +186,38 @@ export default defineComponent({
 
 /* Results Section */
 .results {
-  margin-top: 3rem;
-  max-width: 800px;
+  margin-top: 2rem;
+  max-width: 900px;
   width: 100%;
+  text-align: center;
 }
 
 .results-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
   color: #2d3748;
-  margin-bottom: 1.5rem;
-  text-align: center;
 }
 
 .results-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
 }
 
 .result-card {
   background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 0.375rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .result-card p {
-  font-size: 0.95rem;
-  color: #4a5568;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
+  color: #4a5568;
 }
 
 .result-card a {

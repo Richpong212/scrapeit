@@ -26,7 +26,7 @@ class Scraper:
         """
         Introduce human-like behavior by adding random delays.
         """
-        delay = random.uniform(1, 2)  # Random delay between 2 to 5 seconds
+        delay = random.uniform(2, 5)  # Random delay between 2 to 5 seconds
         print(Fore.CYAN + f"Simulating human behavior with a delay of {delay:.2f} seconds." + Style.RESET_ALL)
         sleep(delay)
 
@@ -38,7 +38,7 @@ class Scraper:
             captcha_present = self.page.locator("iframe[title*='reCAPTCHA']").count()
             if captcha_present > 0:
                 print(Fore.RED + "reCAPTCHA detected! Please solve it manually or Change you IP." + Style.RESET_ALL)
-                #input("Press Enter after solving the reCAPTCHA...")
+                input("Press Enter after solving the reCAPTCHA...")
                 return True
             return False
         except Exception as e:
@@ -54,7 +54,7 @@ class Scraper:
             google_url = f"https://www.google.com/search?q={self.search_term.replace(' ', '+')}"
             print(Fore.CYAN + f"Searching: {google_url}" + Style.RESET_ALL)
 
-            self.page.goto(google_url, timeout=4000)
+            self.page.goto(google_url, timeout=15000)
             self.page.wait_for_load_state("networkidle")
 
             # Check and handle reCAPTCHA
