@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
 from scraper import Scraper
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+# Enable CORS
+CORS(app)
 
 @app.route("/")
 def home():
